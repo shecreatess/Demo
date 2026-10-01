@@ -1,21 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="description"
-    content="PEPSI//PLAY — an unofficial interactive Pepsi virtual demo store."
-  >
-
-  <title>PEPSI//PLAY — Virtual Demo Store</title>
+  <title>PEPSI — Thirsty For More</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet"
   >
 
@@ -24,677 +19,674 @@
 
 <body>
 
-  <div class="noise"></div>
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
 
-  <div id="toast" class="toast" aria-live="polite"></div>
+  <nav class="navbar">
 
-  <!-- HEADER -->
-  <header class="site-header">
-
-    <a class="brand" href="#home" aria-label="Pepsi Play home">
-
-      <span class="pepsi-mark" aria-hidden="true">
-        <span class="mark-red"></span>
-        <span class="mark-white"></span>
-        <span class="mark-blue"></span>
-      </span>
-
-      <span class="brand-word">
-        PEPSI<span>//</span>PLAY
-      </span>
-
+    <a href="#" class="brand">
+      <img
+        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Pepsi_2023.svg"
+        alt="Pepsi logo"
+      >
+      <span>PEPSI</span>
     </a>
 
-    <nav class="main-nav">
+    <div class="nav-links">
       <a href="#drinks">Drinks</a>
-      <a href="#wear">Wear</a>
       <a href="#food">Food</a>
-      <a href="#extras">Extras</a>
-    </nav>
+      <a href="#wear">Wear</a>
+      <a href="#accessories">Accessories</a>
+    </div>
 
-    <div class="header-actions">
+    <button class="cart-button" onclick="openCart()">
+      BAG
+      <span id="cartCount">0</span>
+    </button>
+
+  </nav>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <header class="hero">
+
+    <div class="hero-content">
+
+      <p class="eyebrow">PEPSI PRESENTS</p>
+
+      <h1>
+        THIRSTY
+        <span>FOR MORE.</span>
+      </h1>
+
+      <p class="hero-text">
+        Drinks. Food. Fashion. Culture.
+        One place to get your Pepsi fix.
+      </p>
 
       <button
-        class="icon-btn"
-        id="searchBtn"
-        title="Search"
+        class="primary-button"
+        onclick="document.getElementById('drinks').scrollIntoView({behavior:'smooth'})"
       >
-        ⌕
+        SHOP PEPSI →
       </button>
 
-      <button
-        class="icon-btn"
-        id="loginBtn"
-      >
-        Log in
-      </button>
+    </div>
 
-      <button
-        class="cart-btn"
-        id="cartBtn"
+    <div class="hero-product">
+
+      <div class="glow"></div>
+
+      <img
+        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Pepsi_Bottle.jpg"
+        alt="Pepsi bottle"
       >
-        Basket
-        <b id="cartCount">0</b>
-      </button>
 
     </div>
 
   </header>
 
 
-  <main>
+  <!-- =========================
+       FLAVOUR STRIP
+  ========================== -->
 
-    <!-- HERO -->
-    <section id="home" class="hero">
+  <section class="flavour-strip">
 
-      <div class="hero-copy">
+    <div>
+      <strong>ICE COLD</strong>
+      <span>✓</span>
+    </div>
 
-        <p class="eyebrow">
-          UNOFFICIAL VIRTUAL CONCEPT · 2026
-        </p>
+    <div>
+      <strong>BOLD FLAVOUR</strong>
+      <span>✓</span>
+    </div>
 
-        <h1>
-          THE<br>
-          <span>PEPSI</span><br>
-          UNIVERSE.
-        </h1>
+    <div>
+      <strong>ZERO BORING</strong>
+      <span>✓</span>
+    </div>
 
-        <p class="hero-sub">
-          Drinks you did not know you wanted.
-          Clothes you would actually wear.
-          Food, collectibles and strange little ideas
-          — all in one interactive demo.
-        </p>
+    <div>
+      <strong>THIRSTY FOR MORE</strong>
+      <span>✓</span>
+    </div>
 
-        <div class="hero-actions">
+  </section>
 
-          <a
-            class="btn btn-dark"
-            href="#drinks"
+
+  <!-- =========================
+       DRINKS
+  ========================== -->
+
+  <section class="section drinks-section" id="drinks">
+
+    <div class="section-heading">
+
+      <div>
+        <p class="eyebrow">THE MAIN EVENT</p>
+        <h2>PEPSI DRINKS</h2>
+      </div>
+
+      <p>
+        Pick your flavour.
+        <br>
+        Make it cold.
+        <br>
+        Don't share.
+      </p>
+
+    </div>
+
+
+    <div class="product-grid">
+
+
+      <!-- PRODUCT 1 -->
+
+      <article class="product-card featured">
+
+        <div class="product-image blue-bg">
+
+          <span class="product-tag">CLASSIC</span>
+
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Pepsi_Bottle.jpg"
+            alt="Classic Pepsi bottle"
           >
-            Explore flavours <span>↗</span>
-          </a>
+
+        </div>
+
+        <div class="product-info">
+
+          <p>PEPSI</p>
+
+          <h3>Classic Pepsi</h3>
+
+          <span class="description">
+            Bold cola. Crisp sweetness. Ice cold.
+          </span>
+
+          <div class="product-bottom">
+
+            <strong>₦2,000</strong>
+
+            <button
+              onclick="addToCart('Classic Pepsi', 2000)"
+            >
+              +
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- PRODUCT 2 -->
+
+      <article class="product-card">
+
+        <div class="product-image dark-bg">
+
+          <span class="product-tag">ZERO</span>
+
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Pepsi_Can.jpg"
+            alt="Pepsi can"
+          >
+
+        </div>
+
+        <div class="product-info">
+
+          <p>PEPSI</p>
+
+          <h3>Pepsi Zero Sugar</h3>
+
+          <span class="description">
+            Big Pepsi taste. Zero sugar.
+          </span>
+
+          <div class="product-bottom">
+
+            <strong>₦2,200</strong>
+
+            <button
+              onclick="addToCart('Pepsi Zero Sugar', 2200)"
+            >
+              +
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- PRODUCT 3 -->
+
+      <article class="product-card">
+
+        <div class="product-image red-bg">
+
+          <span class="product-tag">WILD</span>
+
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Pepsi_Can.jpg"
+            alt="Pepsi Wild Cherry"
+          >
+
+        </div>
+
+        <div class="product-info">
+
+          <p>PEPSI</p>
+
+          <h3>Wild Cherry</h3>
+
+          <span class="description">
+            Pepsi with a bold cherry twist.
+          </span>
+
+          <div class="product-bottom">
+
+            <strong>₦2,500</strong>
+
+            <button
+              onclick="addToCart('Pepsi Wild Cherry', 2500)"
+            >
+              +
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- PRODUCT 4 -->
+
+      <article class="product-card">
+
+        <div class="product-image mango-bg">
+
+          <span class="product-tag">FRUITY</span>
+
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Pepsi_Bottle.jpg"
+            alt="Pepsi Mango"
+          >
+
+        </div>
+
+        <div class="product-info">
+
+          <p>LIMITED</p>
+
+          <h3>Pepsi Mango</h3>
+
+          <span class="description">
+            Cola with a tropical mango splash.
+          </span>
+
+          <div class="product-bottom">
+
+            <strong>₦2,800</strong>
+
+            <button
+              onclick="addToCart('Pepsi Mango', 2800)"
+            >
+              +
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOD
+  ========================== -->
+
+  <section class="food-section" id="food">
+
+    <div class="food-heading">
+
+      <p class="eyebrow">PAIR IT WITH</p>
+
+      <h2>
+        PEPSI
+        <span>+ FOOD</span>
+      </h2>
+
+      <p>
+        Because Pepsi tastes better
+        when something delicious is happening.
+      </p>
+
+    </div>
+
+
+    <div class="food-grid">
+
+
+      <article
+        class="food-card large"
+        style="
+          background-image:
+          url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=90');
+        "
+      >
+
+        <div class="food-overlay">
+
+          <span>MEAT LOVERS</span>
+
+          <h3>THE BIG BURGER</h3>
+
+          <p>
+            Beef • Cheese • Lettuce • Fries
+          </p>
 
           <button
-            class="btn btn-outline"
-            id="surpriseBtn"
+            onclick="addToCart('The Big Burger', 12500)"
           >
-            Surprise me ✦
+            ADD — ₦12,500
           </button>
 
         </div>
 
-      </div>
+      </article>
 
 
-      <div class="hero-art">
+      <article
+        class="food-card"
+        style="
+          background-image:
+          url('https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1000&q=90');
+        "
+      >
 
-        <div class="orbit orbit-one"></div>
-        <div class="orbit orbit-two"></div>
+        <div class="food-overlay">
 
-        <div class="hero-can">
+          <span>CHEESY</span>
 
-          <div class="can-top"></div>
+          <h3>PEPPERONI PIZZA</h3>
 
-          <div class="can-logo">
+          <p>Extra cheese. Extra everything.</p>
 
-            <span class="pepsi-mark big"></span>
-
-            <strong>PEPSI</strong>
-
-          </div>
-
-          <div class="can-flavour">
-            TOKYO
-            <br>
-            <small>YUZU + CHERRY</small>
-          </div>
-
-          <div class="can-bottom"></div>
+          <button
+            onclick="addToCart('Pepperoni Pizza', 14500)"
+          >
+            ADD — ₦14,500
+          </button>
 
         </div>
 
-        <div class="sticker sticker-a">
-          NEW<br>
-          DROP
-        </div>
-
-        <div class="sticker sticker-b">
-          0<br>
-          BOREDOM
-        </div>
-
-      </div>
-
-    </section>
+      </article>
 
 
-    <!-- MARQUEE -->
-    <section class="marquee">
-      <div>
-        PEPSI PLAY · SIP DIFFERENT ·
-        PEPSI PLAY · SIP DIFFERENT ·
-        PEPSI PLAY · SIP DIFFERENT ·
-      </div>
-    </section>
+      <article
+        class="food-card"
+        style="
+          background-image:
+          url('https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=1000&q=90');
+        "
+      >
 
+        <div class="food-overlay">
 
-    <!-- DRINKS -->
-    <section
-      id="drinks"
-      class="section drinks-section"
-    >
+          <span>CRISPY</span>
 
-      <div class="section-head">
+          <h3>LOADED FRIES</h3>
 
-        <div>
+          <p>Hot. Crispy. Dangerous.</p>
 
-          <p class="eyebrow">
-            01 / THE FLAVOUR LAB
-          </p>
-
-          <h2>
-            DRINKS<br>
-            <em>GET WEIRD.</em>
-          </h2>
+          <button
+            onclick="addToCart('Loaded Fries', 7500)"
+          >
+            ADD — ₦7,500
+          </button>
 
         </div>
 
-        <p class="section-note">
-          Ten limited-demo flavours.
-          Tap a card to see the ingredients,
-          bottle concept, price and vibe.
-        </p>
+      </article>
 
-      </div>
 
-      <div
-        class="filter-row"
-        id="drinkFilters"
-      ></div>
+    </div>
 
-      <div
-        class="product-grid"
-        id="drinkGrid"
-      ></div>
+  </section>
 
-    </section>
 
+  <!-- =========================
+       COMBO
+  ========================== -->
 
-    <!-- FLAVOUR GENERATOR -->
-    <section class="flavour-lab">
+  <section class="combo-section">
 
-      <div>
+    <div>
 
-        <p class="eyebrow">
-          PEPSI FLAVOUR GENERATOR
-        </p>
-
-        <h2>
-          Make a flavour<br>
-          <span>that should not work.</span>
-        </h2>
-
-        <p>
-          Pick a mood. We will invent the can name,
-          flavour notes and ingredient story.
-        </p>
-
-      </div>
-
-
-      <div class="generator-card">
-
-        <select id="moodSelect">
-
-          <option value="chaos">
-            Chaotic
-          </option>
-
-          <option value="luxury">
-            Luxury
-          </option>
-
-          <option value="tropical">
-            Tropical
-          </option>
-
-          <option value="night">
-            Midnight
-          </option>
-
-          <option value="sweet">
-            Sweet tooth
-          </option>
-
-        </select>
-
-        <button
-          class="btn btn-light"
-          id="generateBtn"
-        >
-          GENERATE ✦
-        </button>
-
-        <div
-          id="generatedFlavor"
-          class="generated-flavor"
-        >
-
-          <span>YOUR NEXT PEPSI</span>
-
-          <strong>???</strong>
-
-          <small>
-            Hit generate.
-          </small>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- CLOTHES -->
-    <section
-      id="wear"
-      class="section wear-section"
-    >
-
-      <div class="split-title">
-
-        <div>
-
-          <p class="eyebrow">
-            02 / PEPSI STREET DEPT.
-          </p>
-
-          <h2>
-            WEAR<br>
-            <span>THE DROP.</span>
-          </h2>
-
-        </div>
-
-        <div class="lookbook">
-          LOOKBOOK<br>
-          <b>001—010</b>
-        </div>
-
-      </div>
-
-      <div
-        class="wear-grid"
-        id="wearGrid"
-      ></div>
-
-    </section>
-
-
-    <!-- FOOD -->
-    <section
-      id="food"
-      class="section food-section"
-    >
-
-      <div class="section-head">
-
-        <div>
-
-          <p class="eyebrow">
-            03 / PEPSI KITCHEN
-          </p>
-
-          <h2>
-            FOOD<br>
-            <em>FOR THE FIZZ.</em>
-          </h2>
-
-        </div>
-
-        <div
-          class="food-tabs"
-          id="foodTabs"
-        ></div>
-
-      </div>
-
-
-      <div
-        class="food-feature"
-        id="foodFeature"
-      ></div>
-
-
-      <div
-        class="food-mini-grid"
-        id="foodGrid"
-      ></div>
-
-    </section>
-
-
-    <!-- EXTRAS -->
-    <section
-      id="extras"
-      class="section extras-section"
-    >
-
-      <div class="section-head">
-
-        <div>
-
-          <p class="eyebrow">
-            04 / SMALL THINGS. BIG ENERGY.
-          </p>
-
-          <h2>
-            EXTRAS<br>
-            <span>& BEAUTY.</span>
-          </h2>
-
-        </div>
-
-      </div>
-
-
-      <div
-        class="extras-grid"
-        id="extrasGrid"
-      ></div>
-
-    </section>
-
-
-    <!-- FINAL CTA -->
-    <section class="final-cta">
-
-      <div class="cta-ring"></div>
-
-      <p class="eyebrow">
-        YOU MADE IT THIS FAR.
-      </p>
+      <p class="eyebrow">BUILD YOUR OWN</p>
 
       <h2>
-        WHAT ARE YOU<br>
-        ADDING TO
-        <span>THE BASKET?</span>
+        THE
+        <span>PEPSI COMBO.</span>
       </h2>
 
+      <p>
+        Choose your drink.
+        Choose your food.
+        We handle the rest.
+      </p>
+
       <button
-        class="btn btn-light"
-        id="finalShopBtn"
+        class="primary-button"
+        onclick="buildCombo()"
       >
-        SHOP THE WHOLE DROP ↗
+        BUILD MY COMBO
       </button>
 
-    </section>
-
-  </main>
+    </div>
 
 
-  <!-- FOOTER -->
+    <div class="combo-image">
+
+      <img
+        src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=90"
+        alt="Burger and fries"
+      >
+
+      <div class="combo-pepsi">
+
+        <img
+          src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Pepsi_Bottle.jpg"
+          alt="Pepsi"
+        >
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CLOTHING
+  ========================== -->
+
+  <section class="wear-section" id="wear">
+
+    <div class="section-heading">
+
+      <div>
+        <p class="eyebrow">WEAR THE VIBE</p>
+        <h2>PEPSI WEAR</h2>
+      </div>
+
+      <p>
+        The drink became
+        a lifestyle.
+      </p>
+
+    </div>
+
+
+    <div class="wear-grid">
+
+
+      <article class="wear-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1556821840-3f9ab962d6a7?auto=format&fit=crop&w=900&q=90"
+          alt="Black hoodie"
+        >
+
+        <div>
+
+          <h3>PEPSI HOODIE</h3>
+
+          <p>₦35,000</p>
+
+          <button
+            onclick="addToCart('Pepsi Hoodie', 35000)"
+          >
+            ADD TO BAG
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <article class="wear-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=90"
+          alt="White shirt"
+        >
+
+        <div>
+
+          <h3>PEPSI TEE</h3>
+
+          <p>₦22,000</p>
+
+          <button
+            onclick="addToCart('Pepsi Tee', 22000)"
+          >
+            ADD TO BAG
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <article class="wear-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=900&q=90"
+          alt="Fashion collection"
+        >
+
+        <div>
+
+          <h3>PEPSI STREETWEAR</h3>
+
+          <p>₦42,000</p>
+
+          <button
+            onclick="addToCart('Pepsi Streetwear', 42000)"
+          >
+            ADD TO BAG
+          </button>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       ACCESSORIES
+  ========================== -->
+
+  <section class="accessories" id="accessories">
+
+    <p class="eyebrow">SMALL THINGS</p>
+
+    <h2>PEPSI ACCESSORIES</h2>
+
+    <div class="accessory-row">
+
+      <button onclick="addToCart('Pepsi Key Holder', 8500)">
+        🔑 KEY HOLDER
+        <span>₦8,500</span>
+      </button>
+
+      <button onclick="addToCart('Pepsi Cap', 18000)">
+        🧢 PEPSI CAP
+        <span>₦18,000</span>
+      </button>
+
+      <button onclick="addToCart('Pepsi Tote Bag', 15000)">
+        👜 TOTE BAG
+        <span>₦15,000</span>
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
   <footer>
 
-    <div class="footer-brand">
+    <img
+      src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Pepsi_2023.svg"
+      alt="Pepsi"
+    >
 
-      <span class="pepsi-mark"></span>
-
-      <strong>
-        PEPSI//PLAY
-      </strong>
-
-    </div>
+    <h2>THIRSTY FOR MORE?</h2>
 
     <p>
-      Conceptual fan/demo experience.
-      Not affiliated with or endorsed by PepsiCo.
+      This is a fictional demonstration store.
     </p>
 
-    <div class="footer-links">
-
-      <a href="#home">
-        Back to top ↑
-      </a>
-
-      <button id="aboutBtn">
-        About this demo
-      </button>
-
-    </div>
+    <small>
+      Pepsi® is a trademark of PepsiCo, Inc.
+    </small>
 
   </footer>
 
 
-  <!-- AUTH MODAL -->
-  <dialog
-    id="authDialog"
-    class="modal"
+  <!-- =========================
+       CART
+  ========================== -->
+
+  <div
+    id="cartModal"
+    class="cart-modal"
   >
 
-    <button
-      class="close-modal"
-      data-close="authDialog"
-    >
-      ×
-    </button>
-
-    <div class="auth-logo">
-      <span class="pepsi-mark"></span>
-    </div>
-
-    <p class="eyebrow">
-      WELCOME TO PEPSI//PLAY
-    </p>
-
-    <h2 id="authTitle">
-      Create your account.
-    </h2>
-
-    <p class="muted">
-      Sign in to save your basket
-      and unlock the full demo experience.
-    </p>
-
-
-    <div class="auth-tabs">
+    <div class="cart-box">
 
       <button
-        class="active"
-        data-auth="signup"
+        class="close-cart"
+        onclick="closeCart()"
       >
-        Sign up
-      </button>
-
-      <button data-auth="login">
-        Log in
-      </button>
-
-    </div>
-
-
-    <form id="authForm">
-
-      <label id="nameField">
-        Name
-        <input
-          type="text"
-          placeholder="Kachi"
-          required
-        >
-      </label>
-
-      <label>
-        Email
-        <input
-          type="email"
-          placeholder="you@email.com"
-          required
-        >
-      </label>
-
-      <label>
-        Password
-        <input
-          type="password"
-          placeholder="••••••••"
-          required
-        >
-      </label>
-
-      <button
-        class="btn btn-dark full"
-        type="submit"
-      >
-        Continue →
-      </button>
-
-    </form>
-
-  </dialog>
-
-
-  <!-- PRODUCT MODAL -->
-  <dialog
-    id="productDialog"
-    class="modal product-modal"
-  >
-
-    <button
-      class="close-modal"
-      data-close="productDialog"
-    >
-      ×
-    </button>
-
-    <div id="productDetail"></div>
-
-  </dialog>
-
-
-  <!-- CART -->
-  <aside
-    id="cartDrawer"
-    class="cart-drawer"
-  >
-
-    <div class="cart-head">
-
-      <h2>
-        Your basket
-      </h2>
-
-      <button id="closeCart">
         ×
       </button>
 
+      <p class="eyebrow">YOUR BAG</p>
+
+      <h2>PEPSI CART</h2>
+
+      <div id="cartItems"></div>
+
+      <div class="cart-total">
+
+        <span>TOTAL</span>
+
+        <strong id="cartTotal">
+          ₦0
+        </strong>
+
+      </div>
+
+      <button
+        class="checkout"
+        onclick="checkout()"
+      >
+        CHECKOUT →
+      </button>
+
     </div>
 
-    <div
-      id="cartItems"
-      class="cart-items"
-    ></div>
-
-    <div class="cart-total">
-
-      <span>
-        Total
-      </span>
-
-      <strong id="cartTotal">
-        ₦0
-      </strong>
-
-    </div>
-
-    <button
-      class="btn btn-dark full"
-      id="checkoutBtn"
-    >
-      Mock checkout →
-    </button>
-
-    <p class="tiny">
-      Demo only. No real payment is processed.
-    </p>
-
-  </aside>
-
-
-  <!-- SEARCH -->
-  <dialog
-    id="searchDialog"
-    class="modal search-modal"
-  >
-
-    <button
-      class="close-modal"
-      data-close="searchDialog"
-    >
-      ×
-    </button>
-
-    <p class="eyebrow">
-      SEARCH THE UNIVERSE
-    </p>
-
-    <input
-      id="searchInput"
-      class="big-search"
-      placeholder="Try “cherry”, “hoodie”, “vegan”..."
-      autofocus
-    >
-
-    <div id="searchResults"></div>
-
-  </dialog>
-
-
-  <!-- ABOUT -->
-  <dialog
-    id="aboutDialog"
-    class="modal"
-  >
-
-    <button
-      class="close-modal"
-      data-close="aboutDialog"
-    >
-      ×
-    </button>
-
-    <p class="eyebrow">
-      ABOUT THE BUILD
-    </p>
-
-    <h2>
-      Pepsi, but make it interactive.
-    </h2>
-
-    <p>
-      This static front-end demo borrows the visual language
-      of the reference flyers: oversized type, bold colour blocks,
-      editorial product shots, stickers, diagonal shapes
-      and product-first layouts.
-    </p>
-
-    <p>
-      Every card, filter, modal, basket interaction
-      and flavour generator works in-browser.
-    </p>
-
-    <p class="muted">
-      For GitHub Pages: upload
-      <code>index.html</code>,
-      <code>styles.css</code>
-      and
-      <code>app.js</code>
-      to a repository and enable Pages
-      from the repository settings.
-    </p>
-
-  </dialog>
+  </div>
 
 
   <script src="app.js"></script>
