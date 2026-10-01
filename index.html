@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <meta
+    name="description"
+    content="PEPSI//PLAY — an unofficial interactive Pepsi virtual demo store."
+  >
+
+  <title>PEPSI//PLAY — Virtual Demo Store</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div class="noise"></div>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+
+    <a class="brand" href="#home" aria-label="Pepsi Play home">
+
+      <span class="pepsi-mark" aria-hidden="true">
+        <span class="mark-red"></span>
+        <span class="mark-white"></span>
+        <span class="mark-blue"></span>
+      </span>
+
+      <span class="brand-word">
+        PEPSI<span>//</span>PLAY
+      </span>
+
+    </a>
+
+    <nav class="main-nav">
+      <a href="#drinks">Drinks</a>
+      <a href="#wear">Wear</a>
+      <a href="#food">Food</a>
+      <a href="#extras">Extras</a>
+    </nav>
+
+    <div class="header-actions">
+
+      <button
+        class="icon-btn"
+        id="searchBtn"
+        title="Search"
+      >
+        ⌕
+      </button>
+
+      <button
+        class="icon-btn"
+        id="loginBtn"
+      >
+        Log in
+      </button>
+
+      <button
+        class="cart-btn"
+        id="cartBtn"
+      >
+        Basket
+        <b id="cartCount">0</b>
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+
+      <div class="hero-copy">
+
+        <p class="eyebrow">
+          UNOFFICIAL VIRTUAL CONCEPT · 2026
+        </p>
+
+        <h1>
+          THE<br>
+          <span>PEPSI</span><br>
+          UNIVERSE.
+        </h1>
+
+        <p class="hero-sub">
+          Drinks you did not know you wanted.
+          Clothes you would actually wear.
+          Food, collectibles and strange little ideas
+          — all in one interactive demo.
+        </p>
+
+        <div class="hero-actions">
+
+          <a
+            class="btn btn-dark"
+            href="#drinks"
+          >
+            Explore flavours <span>↗</span>
+          </a>
+
+          <button
+            class="btn btn-outline"
+            id="surpriseBtn"
+          >
+            Surprise me ✦
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div class="hero-art">
+
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+
+        <div class="hero-can">
+
+          <div class="can-top"></div>
+
+          <div class="can-logo">
+
+            <span class="pepsi-mark big"></span>
+
+            <strong>PEPSI</strong>
+
+          </div>
+
+          <div class="can-flavour">
+            TOKYO
+            <br>
+            <small>YUZU + CHERRY</small>
+          </div>
+
+          <div class="can-bottom"></div>
+
+        </div>
+
+        <div class="sticker sticker-a">
+          NEW<br>
+          DROP
+        </div>
+
+        <div class="sticker sticker-b">
+          0<br>
+          BOREDOM
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- MARQUEE -->
+    <section class="marquee">
+      <div>
+        PEPSI PLAY · SIP DIFFERENT ·
+        PEPSI PLAY · SIP DIFFERENT ·
+        PEPSI PLAY · SIP DIFFERENT ·
+      </div>
+    </section>
+
+
+    <!-- DRINKS -->
+    <section
+      id="drinks"
+      class="section drinks-section"
+    >
+
+      <div class="section-head">
+
+        <div>
+
+          <p class="eyebrow">
+            01 / THE FLAVOUR LAB
+          </p>
+
+          <h2>
+            DRINKS<br>
+            <em>GET WEIRD.</em>
+          </h2>
+
+        </div>
+
+        <p class="section-note">
+          Ten limited-demo flavours.
+          Tap a card to see the ingredients,
+          bottle concept, price and vibe.
+        </p>
+
+      </div>
+
+      <div
+        class="filter-row"
+        id="drinkFilters"
+      ></div>
+
+      <div
+        class="product-grid"
+        id="drinkGrid"
+      ></div>
+
+    </section>
+
+
+    <!-- FLAVOUR GENERATOR -->
+    <section class="flavour-lab">
+
+      <div>
+
+        <p class="eyebrow">
+          PEPSI FLAVOUR GENERATOR
+        </p>
+
+        <h2>
+          Make a flavour<br>
+          <span>that should not work.</span>
+        </h2>
+
+        <p>
+          Pick a mood. We will invent the can name,
+          flavour notes and ingredient story.
+        </p>
+
+      </div>
+
+
+      <div class="generator-card">
+
+        <select id="moodSelect">
+
+          <option value="chaos">
+            Chaotic
+          </option>
+
+          <option value="luxury">
+            Luxury
+          </option>
+
+          <option value="tropical">
+            Tropical
+          </option>
+
+          <option value="night">
+            Midnight
+          </option>
+
+          <option value="sweet">
+            Sweet tooth
+          </option>
+
+        </select>
+
+        <button
+          class="btn btn-light"
+          id="generateBtn"
+        >
+          GENERATE ✦
+        </button>
+
+        <div
+          id="generatedFlavor"
+          class="generated-flavor"
+        >
+
+          <span>YOUR NEXT PEPSI</span>
+
+          <strong>???</strong>
+
+          <small>
+            Hit generate.
+          </small>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CLOTHES -->
+    <section
+      id="wear"
+      class="section wear-section"
+    >
+
+      <div class="split-title">
+
+        <div>
+
+          <p class="eyebrow">
+            02 / PEPSI STREET DEPT.
+          </p>
+
+          <h2>
+            WEAR<br>
+            <span>THE DROP.</span>
+          </h2>
+
+        </div>
+
+        <div class="lookbook">
+          LOOKBOOK<br>
+          <b>001—010</b>
+        </div>
+
+      </div>
+
+      <div
+        class="wear-grid"
+        id="wearGrid"
+      ></div>
+
+    </section>
+
+
+    <!-- FOOD -->
+    <section
+      id="food"
+      class="section food-section"
+    >
+
+      <div class="section-head">
+
+        <div>
+
+          <p class="eyebrow">
+            03 / PEPSI KITCHEN
+          </p>
+
+          <h2>
+            FOOD<br>
+            <em>FOR THE FIZZ.</em>
+          </h2>
+
+        </div>
+
+        <div
+          class="food-tabs"
+          id="foodTabs"
+        ></div>
+
+      </div>
+
+
+      <div
+        class="food-feature"
+        id="foodFeature"
+      ></div>
+
+
+      <div
+        class="food-mini-grid"
+        id="foodGrid"
+      ></div>
+
+    </section>
+
+
+    <!-- EXTRAS -->
+    <section
+      id="extras"
+      class="section extras-section"
+    >
+
+      <div class="section-head">
+
+        <div>
+
+          <p class="eyebrow">
+            04 / SMALL THINGS. BIG ENERGY.
+          </p>
+
+          <h2>
+            EXTRAS<br>
+            <span>& BEAUTY.</span>
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="extras-grid"
+        id="extrasGrid"
+      ></div>
+
+    </section>
+
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+
+      <div class="cta-ring"></div>
+
+      <p class="eyebrow">
+        YOU MADE IT THIS FAR.
+      </p>
+
+      <h2>
+        WHAT ARE YOU<br>
+        ADDING TO
+        <span>THE BASKET?</span>
+      </h2>
+
+      <button
+        class="btn btn-light"
+        id="finalShopBtn"
+      >
+        SHOP THE WHOLE DROP ↗
+      </button>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-brand">
+
+      <span class="pepsi-mark"></span>
+
+      <strong>
+        PEPSI//PLAY
+      </strong>
+
+    </div>
+
+    <p>
+      Conceptual fan/demo experience.
+      Not affiliated with or endorsed by PepsiCo.
+    </p>
+
+    <div class="footer-links">
+
+      <a href="#home">
+        Back to top ↑
+      </a>
+
+      <button id="aboutBtn">
+        About this demo
+      </button>
+
+    </div>
+
+  </footer>
+
+
+  <!-- AUTH MODAL -->
+  <dialog
+    id="authDialog"
+    class="modal"
+  >
+
+    <button
+      class="close-modal"
+      data-close="authDialog"
+    >
+      ×
+    </button>
+
+    <div class="auth-logo">
+      <span class="pepsi-mark"></span>
+    </div>
+
+    <p class="eyebrow">
+      WELCOME TO PEPSI//PLAY
+    </p>
+
+    <h2 id="authTitle">
+      Create your account.
+    </h2>
+
+    <p class="muted">
+      Sign in to save your basket
+      and unlock the full demo experience.
+    </p>
+
+
+    <div class="auth-tabs">
+
+      <button
+        class="active"
+        data-auth="signup"
+      >
+        Sign up
+      </button>
+
+      <button data-auth="login">
+        Log in
+      </button>
+
+    </div>
+
+
+    <form id="authForm">
+
+      <label id="nameField">
+        Name
+        <input
+          type="text"
+          placeholder="Kachi"
+          required
+        >
+      </label>
+
+      <label>
+        Email
+        <input
+          type="email"
+          placeholder="you@email.com"
+          required
+        >
+      </label>
+
+      <label>
+        Password
+        <input
+          type="password"
+          placeholder="••••••••"
+          required
+        >
+      </label>
+
+      <button
+        class="btn btn-dark full"
+        type="submit"
+      >
+        Continue →
+      </button>
+
+    </form>
+
+  </dialog>
+
+
+  <!-- PRODUCT MODAL -->
+  <dialog
+    id="productDialog"
+    class="modal product-modal"
+  >
+
+    <button
+      class="close-modal"
+      data-close="productDialog"
+    >
+      ×
+    </button>
+
+    <div id="productDetail"></div>
+
+  </dialog>
+
+
+  <!-- CART -->
+  <aside
+    id="cartDrawer"
+    class="cart-drawer"
+  >
+
+    <div class="cart-head">
+
+      <h2>
+        Your basket
+      </h2>
+
+      <button id="closeCart">
+        ×
+      </button>
+
+    </div>
+
+    <div
+      id="cartItems"
+      class="cart-items"
+    ></div>
+
+    <div class="cart-total">
+
+      <span>
+        Total
+      </span>
+
+      <strong id="cartTotal">
+        ₦0
+      </strong>
+
+    </div>
+
+    <button
+      class="btn btn-dark full"
+      id="checkoutBtn"
+    >
+      Mock checkout →
+    </button>
+
+    <p class="tiny">
+      Demo only. No real payment is processed.
+    </p>
+
+  </aside>
+
+
+  <!-- SEARCH -->
+  <dialog
+    id="searchDialog"
+    class="modal search-modal"
+  >
+
+    <button
+      class="close-modal"
+      data-close="searchDialog"
+    >
+      ×
+    </button>
+
+    <p class="eyebrow">
+      SEARCH THE UNIVERSE
+    </p>
+
+    <input
+      id="searchInput"
+      class="big-search"
+      placeholder="Try “cherry”, “hoodie”, “vegan”..."
+      autofocus
+    >
+
+    <div id="searchResults"></div>
+
+  </dialog>
+
+
+  <!-- ABOUT -->
+  <dialog
+    id="aboutDialog"
+    class="modal"
+  >
+
+    <button
+      class="close-modal"
+      data-close="aboutDialog"
+    >
+      ×
+    </button>
+
+    <p class="eyebrow">
+      ABOUT THE BUILD
+    </p>
+
+    <h2>
+      Pepsi, but make it interactive.
+    </h2>
+
+    <p>
+      This static front-end demo borrows the visual language
+      of the reference flyers: oversized type, bold colour blocks,
+      editorial product shots, stickers, diagonal shapes
+      and product-first layouts.
+    </p>
+
+    <p>
+      Every card, filter, modal, basket interaction
+      and flavour generator works in-browser.
+    </p>
+
+    <p class="muted">
+      For GitHub Pages: upload
+      <code>index.html</code>,
+      <code>styles.css</code>
+      and
+      <code>app.js</code>
+      to a repository and enable Pages
+      from the repository settings.
+    </p>
+
+  </dialog>
+
+
+  <script src="app.js"></script>
+
+</body>
+</html>
